@@ -69,7 +69,7 @@ class Config(DictMixin):
             path to config file
         """
         with open(path) as f:
-            self.config = load(f)
+            self.config = load(f, Loader=yaml.FullLoader)
 
     def save(self):
         """ 
